@@ -1,0 +1,17 @@
+
+
+<div class="card_table" #cardTable  style="border-style:solid;height: 900px;width:80%" >
+     <div *ngFor="let hero of powers" >
+            <div class = "card" 
+            ngDraggable  
+            (stopped)="onDragEnd($event,hero.id)" 
+            [preventDefaultEvent]=true 
+            [bounds]="cardTable"  
+            [zIndex]="z_index[hero.id]" 
+            [zIndexMoving]= 999
+            [inBounds]=true
+            style="display: inline-block;">
+            <app-hero-detail [id]="hero.id" ></app-hero-detail>
+        </div>
+    </div>
+</div>

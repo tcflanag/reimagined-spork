@@ -1,0 +1,56 @@
+﻿mse version: 0.3.6
+
+version: 2008-06-04
+
+# By Ander
+
+image font size: 73
+horizontal space: 0
+symbol:
+	code: U
+	image: burst_r.png
+symbol:
+	code: u
+	image: burst_c.png
+symbol:
+	code: B
+	image: beast.png
+symbol:
+	code: b
+	image: blast.png
+symbol:
+	code: e
+	image: melee.png
+symbol:
+	code: r
+	image: ranged.png
+symbol:
+	code: n
+	image: hybrid.png
+symbol:
+	code: s
+	image: action_standard.png
+symbol:
+	code: o
+	image: action_move.png
+symbol:
+	code: m
+	image: action_minor.png
+symbol:
+	code: i
+	image: action_immediate.png
+symbol:
+	code: p
+	image: personal.png
+symbol:
+	code: f
+	image: action_free.png
+symbol:
+	code: t
+	image: touch.png
+symbol:
+	code: $
+	image: dot.png
+symbol:
+	code: @
+	image: dot_w.png

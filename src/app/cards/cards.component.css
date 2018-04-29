@@ -1,0 +1,4 @@
+.ng-draggable {
+    position: relative;
+    cursor: move;
+  }

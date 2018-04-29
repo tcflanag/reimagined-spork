@@ -1,0 +1,75 @@
+<div class="card">
+  <!-- Start of Colored header -->
+  <div class="card_head_back">
+    <div class="action_icon actiontype_{{apower.actionType}}"></div>
+
+    <div class="card_head {{apower.usage}}">
+
+      <strong> {{apower.name}}</strong>
+
+      <br/> {{apower.usage}}
+      <font style="font-family:Wingdings">s</font>
+      {{apower.actionType}}
+
+    </div>
+    <div class="action_icon attacktype_{{apower.attackType}}"></div>
+
+  </div>
+  <!-- End of Colored header -->
+  <div class="card_int">
+    <div class="card_mid">
+      <!-- Weapon stats -->
+      <div class="weapon" *ngFor="let weapon of apower.weapons">
+        <div *ngIf="weapon.name != 'Unarmed'">
+          <strong>{{weapon.name}}</strong>:
+          <!-- Todo: Possibly check for defense == unknown -->
+          {{weapon.AttackBonus}} vs. {{weapon.Defense}},{{weapon.Damage}} damage>
+        </div>
+      </div>
+      <div style="overflow:hidden;">
+        <div class="w_t">
+          <strong>{{apower.attackType}} </strong>
+        </div>
+
+        <div class="w_t" *ngIf="apower.target">
+          <strong>Target</strong>: {{apower.target}}
+        </div>
+
+        <div class="w_t" *ngIf="apower.targets">
+          <strong>Targets</strong>: {{apower.targets}}
+        </div>
+      </div>
+
+      <hr/>
+      <!--  Properties section -->
+
+
+
+      <div class="grad" *ngIf="apower.flavor">
+        {{apower.flavor}}
+      </div>
+
+      <div *ngIf="apower.keywords">
+        <strong>Keywords</strong>: {{apower.keywords}}
+      </div>
+
+      <div *ngFor="let x of apower.misc;let isEven=even" [class.grad]="isEven" [class.nograd]="!isEven">
+        <span style="white-space: pre-wrap"><strong>{{x[0]}}</strong>: {{x[1]}} </span>
+      </div>
+
+    </div>
+
+    <div class="effect_wrapper">
+      <hr/> Additional Effects
+      <div class="effect_inner1">
+        
+          <div class="weapon" *ngFor="let weapon of apower.weapons">
+            <div *ngIf="weapon.name != 'Unarmed'">
+                <div class="effect_inner">{{weapon.Conditions}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{apower.display}}
+</div>
