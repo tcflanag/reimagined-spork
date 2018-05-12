@@ -152,13 +152,18 @@ li {
     
     
     .Encounter {
-           background:url("./encounter.png");	
+        background:url("./encounter.png");	
+        background-color:#800000;
+
     }
     .At-Will {
         background:url("./atwill.png");	
+        background-color:#005000;
+        
     }
     .Daily {
         background:url("./daily.png");	
+        background-color: #666666;
     }
     .item {
         background:orange;
@@ -175,7 +180,7 @@ li {
     .actiontype_Minor {
         background-image:url("symbols/action_minor.png");
     }
-    .actiontype_Interrupt {
+    .actiontype_Immediate {
         background-image:url("symbols/action_immediate.png");
     }
     .actiontype_Reaction {
@@ -199,13 +204,13 @@ li {
     .attacktype_Personal {
         background-image:url("symbols/personal.png");
     }
-    .attacktype_Close burst {
+    .attacktype_Close {
         background-image:url("symbols/burst_c.png");
     }
     .attacktype_blast {
         background-image:url("symbols/blast.png");
     }
-    .attacktype_Area burst {
+    .attacktype_Area {
         background-image:url("symbols/burst_r.png");
     }
 

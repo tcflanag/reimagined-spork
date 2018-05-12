@@ -3,8 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; 
 
 import { AppComponent } from './app.component';
-import { HeroesComponent } from './heroes/heroes.component';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { PowerCardDetailComponent } from './power-card-detail/power-card-detail.component';
 import { PowerService } from './power.service';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageService } from './message.service';
@@ -13,12 +12,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CardsComponent } from './cards/cards.component';
 import { AngularDraggableModule } from 'angular2-draggable';
 import {AngularFittextModule} from 'angular-fittext';
+import {ContextMenuModule } from'ngx-contextmenu';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeroesComponent,
-    HeroDetailComponent,
+    PowerCardDetailComponent,
     MessagesComponent,
     DashboardComponent,
     CardsComponent,

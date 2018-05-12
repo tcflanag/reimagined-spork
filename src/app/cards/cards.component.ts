@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Power, Weapon } from '../Power';
-import { HeroDetailComponent }  from '../hero-detail/hero-detail.component';
+import { PowerCardDetailComponent }  from '../power-card-detail/power-card-detail.component';
 import {PowerService} from "../power.service"
 
 @Component({

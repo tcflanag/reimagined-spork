@@ -1,11 +1,14 @@
+
+
+
 <div class="card">
   <!-- Start of Colored header -->
-  <div class="card_head_back">
+  <div class="card_head_back  {{apower.usage}}">
     <div class="action_icon actiontype_{{apower.actionType}}"></div>
 
-    <div class="card_head {{apower.usage}}">
+    <div class="card_head">
 
-      <strong> {{apower.name}}</strong>
+      <strong fittext [maxFontSize]=16 > {{apower.name}}</strong>
 
       <br/> {{apower.usage}}
       <font style="font-family:Wingdings">s</font>
@@ -61,11 +64,11 @@
 
     <div class="effect_wrapper">
       <hr/> Additional Effects
-      <div class="effect_inner1">
+      <div class="effect_inner1" fittext>
         
-          <div class="weapon" *ngFor="let weapon of apower.weapons">
+          <div class="weapon" *ngFor="let weapon of apower.weapons" fittext>
             <div *ngIf="weapon.name != 'Unarmed'">
-                <div class="effect_inner">{{weapon.Conditions}}</div>
+                <div class="effect_inner" fittext>{{weapon.Conditions}}</div>
           </div>
         </div>
       </div>

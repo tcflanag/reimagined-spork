@@ -6,11 +6,11 @@ import { Location } from '@angular/common';
 import { PowerService }  from '../power.service';
 
 @Component({
-  selector: 'app-hero-detail',
-  templateUrl: './hero-detail.component.html',
-  styleUrls: ['./hero-detail.component.css']
+  selector: 'app-power-card-detail',
+  templateUrl: './power-card-detail.component.html',
+  styleUrls: ['./power-card-detail.component.css']
 })
-export class HeroDetailComponent implements OnInit {
+export class PowerCardDetailComponent implements OnInit {
 
   @Input() apower: Power;
   @Input() id = -1;
@@ -24,22 +24,9 @@ export class HeroDetailComponent implements OnInit {
 
   ngOnInit(): void {
     
-    this.getPower();
-
 
   }
-  
-  getPower(): void {
-    if (this.id == -1) {
-      const id = +this.route.snapshot.paramMap.get('id');
-      this.powerService.getPower(id).subscribe(apower => this.apower = apower);
-    }
-    else {
-      const id = this.id;
-      this.powerService.getPower(id).subscribe(apower => this.apower = apower);
-    }
 
-  }
   goBack(): void {
     this.location.back();
   }
