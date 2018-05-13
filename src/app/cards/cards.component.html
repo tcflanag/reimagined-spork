@@ -1,17 +1,55 @@
 
 
-<div class="card_table" #cardTable  style="border-style:solid;height: 900px;width:80%" >
-     <div *ngFor="let hero of powers" >
-            <div class = "card" 
+<div class="card_table" #cardTable >
+     
+            <div *ngFor="let power of character.powers"  class = "card" 
             ngDraggable  
-            (stopped)="onDragEnd($event,hero.id)" 
+            (endOffset)="onMoveEnd($event,power.id)" 
             [preventDefaultEvent]=true 
             [bounds]="cardTable"  
-            [zIndex]="z_index[hero.id]" 
+            [zIndex]="z_index[power.id]" 
             [zIndexMoving]= 999
+            [trackPosition]=false
+            [position]="positions[power.id]"
             [inBounds]=true
-            style="display: inline-block;">
-            <app-hero-detail [id]="hero.id" ></app-hero-detail>
-        </div>
+            style="display: inline-block;"
+            [contextMenu]="basicMenu" >
+            <app-power-card-detail [apower]="power" ></app-power-card-detail>
+
+    
     </div>
 </div>
+<div class="stats_area">
+    <div class="floating_stat"><Strong>Reflex</Strong>: <div class="circle">{{character.stats.ref.value}}</div></div>
+    <div class="floating_stat"><Strong>Fortitude</Strong>: <div class="circle">{{character.stats.fort.value}}</div></div>
+    <div class="floating_stat"><Strong>Will</Strong>: <div class="circle">{{character.stats.will.value}}</div></div>
+    <div class="floating_stat"><Strong>AC</Strong>: <div class="circle">{{character.stats.will.value}}</div></div>
+    <div class="floating_stat"><Strong>HP</Strong>  <div class="square">{{character.stats.hp.value}}/{{character.stats.hp.value}}</div></div>
+    <div class="floating_stat"><Strong>To Hit</Strong>  <div class="square">+2</div></div>
+    <div class="floating_stat"><Strong>Regen</Strong>  <div class="square">4</div></div>
+    <div class="floating_stat"><Strong>Ongoing</Strong>  
+      <div class="square small_font">
+        5 fire 3 cold (save)<br/>
+        8 Thunder (1 turn))
+      </div>
+    </div>
+    <div class="floating_stat"><div style="border: 1px solid">
+        <h1> Status Effects</h1><br/>
+        <h2> Save Ends</h2>
+        Stunned<br/>
+        Weakened
+    </div>
+    </div>
+</div>
+<context-menu class="contextmenustyle" #basicMenu>
+    <ng-template contextMenuItem (execute)="showMessage('Hi, ' + $event.item.name)">
+      Say hi!
+    </ng-template>
+    <ng-template contextMenuItem divider="true"></ng-template>
+    <ng-template contextMenuItem let-item (execute)="showMessage($event.item.name + ' said: ' + $event.item.otherProperty)">
+      Bye, {{item?.name}}
+    </ng-template>
+    <ng-template contextMenuItem passive="true">
+      Input something: <input type="text">
+    </ng-template>
+  </context-menu>

@@ -30,6 +30,7 @@ import {ContextMenuModule } from'ngx-contextmenu';
     AppRoutingModule,
     AngularDraggableModule,
     AngularFittextModule,
+    ContextMenuModule.forRoot(),
   ],
   providers: [
     PowerService,

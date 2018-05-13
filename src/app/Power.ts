@@ -1,4 +1,9 @@
 
+export class Character {
+    stats: statblock;
+    powers: Power[];
+}
+
 export class Power {
     id: number;
     name: string;
@@ -51,4 +56,7 @@ export class statblock {
     ref: stat_detail;
     fort: stat_detail;
     will: stat_detail;
+
+    hp: stat_detail;
+    max_surges: stat_detail;
 }

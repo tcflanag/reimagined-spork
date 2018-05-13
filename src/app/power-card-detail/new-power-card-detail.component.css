@@ -1,0 +1,188 @@
+
+@media all {
+
+    body {
+        font-family: "Veranda";
+    }
+    div {
+        box-sizing: border-box;
+    }
+    div.w_t {
+        float:left;
+        width: calc(50% - 6px);
+        padding:1px;
+    }
+    div.card_head_back {
+        color: #FFFFFF;	
+        height: 30px;
+        width: 100%;
+        display: flex;
+        background-size: 100%;
+    
+        background-repeat: no-repeat;
+    }
+    div.action_icon {
+        width: 30px;
+        height: 100%;
+        background-size: 30px 30px;         
+    }
+    div.card_head {
+        width: calc(100% - 60px); 
+        color: #FFFFFF;	
+        height: 100%;
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+    div.action_type_icon {
+        height: 100%;
+        background-size: 30px 30px; 	
+    }
+    .card_head strong {
+        font-size: 16px;
+    }
+    
+    div.card_wrapper {
+        width:6.1cm;
+    }
+
+    div.card{
+        border: 1px solid;
+        font-size:7pt;
+        display:block;
+        width:8.75cm;
+        height:6.1cm;
+        margin-right:2px;
+        margin-bottom:2px;
+        float:left;
+        page-break-inside: avoid;
+        background-color:#EEEEEE;
+    }
+    hr {
+        margin:3px;
+    }
+    
+    
+    div.card_int {
+        
+        font-size:6pt;
+        border: 2px solid;border: 2px solid;
+        background-color:#FFFFFF;
+        /* height: 85%; */
+        
+        }
+    div.card_mid {
+        height: 82%;
+        width: 100%;
+        overflow: hidden;
+        float:left;
+        margin-top: 0;
+        margin-bottom: 0;
+        offset-top:0;
+        offset-bottom:0;
+    }
+        
+    
+    div.grad {
+        background: rgba(212,211,190,1);
+        background: -moz-linear-gradient(left, rgba(212,211,190,1) 0%, rgba(212,211,190,1) 8%, rgba(255,255,255,1) 100%);
+        background: -webkit-gradient(left top, right top, color-stop(0%, rgba(212,211,190,1)), color-stop(8%, rgba(212,211,190,1)), color-stop(100%, rgba(255,255,255,1)));
+        background: -webkit-linear-gradient(left, rgba(212,211,190,1) 0%, rgba(212,211,190,1) 8%, rgba(255,255,255,1) 100%);
+        background: -o-linear-gradient(left, rgba(212,211,190,1) 0%, rgba(212,211,190,1) 8%, rgba(255,255,255,1) 100%);
+        background: -ms-linear-gradient(left, rgba(212,211,190,1) 0%, rgba(212,211,190,1) 8%, rgba(255,255,255,1) 100%);
+        background: linear-gradient(to right, rgba(212,211,190,1) 0%, rgba(212,211,190,1) 8%, rgba(255,255,255,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4d3be', endColorstr='#ffffff', GradientType=1 );
+    }
+    hr {
+        margin-top: 0;
+        margin-bottom: 0;
+        offset-top:0;
+        offset-bottom:0;
+    }
+    
+    div.effect_wrapper {   
+        float:left;
+        
+        width: 100%;
+        font-size:6pt;
+    }
+    div.effect_inner1 {
+        height: calc(100% - 1em);
+    }
+    div.effect_inner {
+        height: 100%;
+        white-space: pre-wrap;
+    
+    }
+    
+    div.footer {
+        font-size:10pt;
+        padding:0;
+        
+    }
+    
+    
+    .Encounter {
+        background:url("./encounter.png");	
+        background-color:#800000;
+
+    }
+    .At-Will {
+        background:url("./atwill.png");	
+        background-color:#005000;
+        
+    }
+    .Daily {
+        background:url("./daily.png");	
+        background-color: #666666;
+    }
+    .item {
+        background:orange;
+    }
+    
+
+
+    .actiontype_Standard_Action {
+        background-image:url("symbols/action_standard.png");
+    }
+    .actiontype_Move_Action {
+        background-image:url("symbols/action_move.png");
+    }
+    .actiontype_Minor_Action {
+        background-image:url("symbols/action_minor.png");
+    }
+    .actiontype_Immediate_Interrupt {
+        background-image:url("symbols/action_immediate.png");
+    }
+    .actiontype_Immediate_Reaction  {
+        background-image:url("symbols/action_reaction.png");
+    }
+    .actiontype_Free_Action {
+        background-image:url("symbols/action_free.png");
+    }
+    .actiontype_No_Action {
+        background-image:url("symbols/action_no.png");
+    }
+
+
+
+    .attacktype_Melee {
+    background-image:url("symbols/melee.png");
+    }
+    .attacktype_Ranged {
+        background-image:url("symbols/ranged.png");
+    }
+    .attacktype_Personal {
+        background-image:url("symbols/personal.png");
+    }
+    .attacktype_Close {
+        background-image:url("symbols/burst_c.png");
+    }
+    .attacktype_blast {
+        background-image:url("symbols/blast.png");
+    }
+    .attacktype_Area {
+        background-image:url("symbols/burst_r.png");
+    }
+
+}
+    

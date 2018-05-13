@@ -7,8 +7,10 @@ import { PowerService }  from '../power.service';
 
 @Component({
   selector: 'app-power-card-detail',
-  templateUrl: './power-card-detail.component.html',
-  styleUrls: ['./power-card-detail.component.css']
+  //templateUrl: './power-card-detail.component.html',
+  //styleUrls: ['./power-card-detail.component.css']
+  templateUrl: './new-power-card-detail.component.html',
+  styleUrls: ['./new-power-card-detail.component.css']
 })
 export class PowerCardDetailComponent implements OnInit {
 

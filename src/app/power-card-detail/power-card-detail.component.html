@@ -8,7 +8,7 @@
 
     <div class="card_head">
 
-      <strong fittext [maxFontSize]=16 > {{apower.name}}</strong>
+      <strong [maxFontSize]=16 > {{apower.name}}</strong>
 
       <br/> {{apower.usage}}
       <font style="font-family:Wingdings">s</font>
@@ -64,11 +64,11 @@
 
     <div class="effect_wrapper">
       <hr/> Additional Effects
-      <div class="effect_inner1" fittext>
+      <div class="effect_inner1" >
         
-          <div class="weapon" *ngFor="let weapon of apower.weapons" fittext>
+          <div class="weapon" *ngFor="let weapon of apower.weapons" >
             <div *ngIf="weapon.name != 'Unarmed'">
-                <div class="effect_inner" fittext>{{weapon.Conditions}}</div>
+                <div class="effect_inner" >{{weapon.Conditions}}</div>
           </div>
         </div>
       </div>

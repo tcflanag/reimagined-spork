@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Power, Weapon } from '../Power';
+import { Power, Weapon,Character } from '../Power';
 import { PowerCardDetailComponent }  from '../power-card-detail/power-card-detail.component';
-import {PowerService} from "../power.service"
+import {PowerService} from "../power.service";
+import {IPosition} from "angular2-draggable";
+import { ContextMenuService, ContextMenuComponent } from "ngx-contextmenu";
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-cards',
@@ -10,48 +13,67 @@ import {PowerService} from "../power.service"
 })
 export class CardsComponent implements OnInit {
 
-  powers: Power[];
+  character: Character;
   z_index: number[];
-
+  positions : IPosition[] ;
+  overlap_check : number[][];
   constructor(private heroService: PowerService) { }
-
+  readonly x_offset: number = 330;
+  readonly y_offset: number = 30;
   ngOnInit() {
     this.getHeroes();
-    this.z_index = new Array(this.powers.length);
-    this.powers.forEach(element => {
-      this.z_index[element.id] = element.id;
-    });
     
-  }
-  inBounds = true;
-  edge = {
-    top: true,
-    bottom: true,
-    left: true,
-    right: true
-  };
-  checkEdge(event) {
-    this.edge = event;
-    console.log('edge:', event);
-  }
-  onDragEnd(event: Event, id: number): void{
+    console.log(this.character);
+
+    this.z_index = new Array(this.character.powers.length);
+    this.positions = new Array(this.character.powers.length);
+    this.overlap_check = new Array();
     
-    
-    for ( let i in this.z_index) {
-      if (parseInt(i) != id){
-        if (this.z_index[i]> this.z_index[id]){
-          this.z_index[i]--;
-        }
+    console.log(this.character);
+    // Init the temp storage array
+    // TODO: do this better
+    for(var i: number = 0; i < 100; i++) {
+      this.overlap_check[i] = [];
+      for(var j: number = 0; j< 100; j++) {
+          this.overlap_check[i][j] = 0;
       }
     }
-    this.z_index[id] = this.z_index.length;
-    console.log(this.z_index);
+
+    // Calculate initial positions
+    this.character.powers.forEach(element => {
+      let p : IPosition = {x:this.x_offset*Math.floor(element.id/12), y:this.y_offset*(element.id%12)};
+      
+      this.positions[element.id] = p;
+      this.overlap_check[p.x/this.x_offset][p.y/this.y_offset]++;
+      this.z_index[element.id] = p.y;
+    });
+    console.log(this.positions)
+
+  }
+
+  onMoveEnd(event, id: number): void{
+    
+    // Preform overlap checking
+    // Snap cards to next unused spot
+    
+    this.overlap_check[this.positions[id].x/this.x_offset][this.positions[id].y/this.y_offset]--;
+
+    let p : IPosition = {x:Math.round(event.x/this.x_offset)*this.x_offset,y:Math.round(event.y/this.y_offset)*this.y_offset};
+    
+    while (this.overlap_check[p.x/this.x_offset][p.y/this.y_offset] > 0){
+      p.y += this.y_offset;
+    };
+    
+    this.overlap_check[p.x/this.x_offset][p.y/this.y_offset] = 1;
+    console.log(this.positions[id],event,p)
+    this.positions[id] = p;
+    this.z_index[id] = p.y;
+
   
   }
 
   getHeroes(): void {
-    this.heroService.getPowers()
-    .subscribe(powers => this.powers = powers);
+    this.heroService.getCharacter().subscribe(character => this.character = character);
   }
 }
 

@@ -11,7 +11,7 @@ h1 {
     font-weight: lighter;
   }
   body {
-    margin: 2em;
+    margin: 0;
   }
   body, input[text], button {
     color: #888;
@@ -21,3 +21,33 @@ h1 {
   * {
     font-family: Arial, Helvetica, sans-serif;
   }
+
+
+  /* TODO Figure out why menu CSS has to go here */
+  .ngx-contextmenu .dropdown-menu { 
+   border: solid 1px black;
+   background-color: white;
+   padding: 0;
+ }
+ .ngx-contextmenu li {
+   display: block;
+   border-top: solid 1px black;
+   text-transform: uppercase;
+   text-align: center;
+ }
+ .ngx-contextmenu li:first-child {
+   border-top:none;
+ }
+ .ngx-contextmenu a {
+   color:black;
+   display: block;
+   padding: 0.5em 1em;
+ }
+ .ngx-contextmenu a:hover {
+   color:darkgreen;
+   background-color:chartreuse;
+ }
+ div[ng-view]{
+  height: 100%;
+}
+html, body { height: 100% !important }
