@@ -23,13 +23,13 @@ export class CardsComponent implements OnInit {
   ngOnInit() {
     this.getHeroes();
     
-    console.log(this.character);
+    //console.log(this.character);
 
     this.z_index = new Array(this.character.powers.length);
     this.positions = new Array(this.character.powers.length);
     this.overlap_check = new Array();
     
-    console.log(this.character);
+    //console.log(this.character);
     // Init the temp storage array
     // TODO: do this better
     for(var i: number = 0; i < 100; i++) {
@@ -47,7 +47,7 @@ export class CardsComponent implements OnInit {
       this.overlap_check[p.x/this.x_offset][p.y/this.y_offset]++;
       this.z_index[element.id] = p.y;
     });
-    console.log(this.positions)
+    //console.log(this.positions)
 
   }
 

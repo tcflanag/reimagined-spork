@@ -23,8 +23,7 @@ export class PowerService {
     let stats = new_character.stats = new statblock();
 
     parseString(MOCK_XML, { attrkey: 'name' }, function (err, result) {
-      console.log(result);
-      console.log(err);
+      //console.log(result);
       //console.log(result.D20Character.CharacterSheet[0].StatBlock[0]);
 
       result.D20Character.CharacterSheet[0].StatBlock[0].Stat.forEach(stat => {
@@ -70,7 +69,7 @@ export class PowerService {
 
 
       });
-      console.log(stats)
+      //console.log(stats)
 
       result.D20Character.CharacterSheet[0].LootTally[0].loot.forEach(loot_item => {
         //console.dir(loot_item)
@@ -83,7 +82,7 @@ export class PowerService {
                 var item_power_details = item_power_re.exec(specifics._.trim());
                 let new_power = new Power();
 
-                console.log(item_power_details)
+                //console.log(item_power_details)
                 new_power.actionType = item_power_details[4].replace(" ","_");;
                 if (typeof item_power_details[3] === "undefined" || item_power_details[3] == "Consumable") {
                   new_power.usage = "At-Will";
