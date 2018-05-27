@@ -2,8 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms'; 
 import { MatDialogModule, MatDialog, MatFormFieldModule,MatInputModule,MatSlideToggle, MatSlideToggleModule,MatAutocompleteModule,
-MatFormFieldModule,
-MatInputModule,
 } from '@angular/material';
 
 

@@ -16,8 +16,8 @@ export class StatusEditorComponent {
   @Input() stats: statblock;
   myControl: FormControl = new FormControl();
   
-  private fieldArray: Array<any> = [];
-  private newAttribute: any = {};
+  fieldArray: Array<any> = [];
+  newAttribute: any = {};
 
   options = [
     'One',
