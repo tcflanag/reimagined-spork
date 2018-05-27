@@ -1,0 +1,13 @@
+<div mat-dialog-content>
+  
+  <mat-form-field>
+      {{data.name}} <input matInput type="number" [(ngModel)]="data.stat">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.stat" cdkFocusInitial>Ok</button>
+</div>
+
+
+

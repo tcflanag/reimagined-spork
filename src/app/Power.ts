@@ -59,4 +59,8 @@ export class statblock {
 
     hp: stat_detail;
     max_surges: stat_detail;
+
+    regen: stat_detail;
+    hit_mod: stat_detail;
+    
 }

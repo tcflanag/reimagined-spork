@@ -1,6 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule,ReactiveFormsModule } from '@angular/forms'; 
+import { MatDialogModule, MatDialog, MatFormFieldModule,MatInputModule,MatSlideToggle, MatSlideToggleModule,MatAutocompleteModule,
+MatFormFieldModule,
+MatInputModule,
+} from '@angular/material';
+
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { AngularDraggableModule } from 'angular2-draggable';
 
 import { AppComponent } from './app.component';
 import { PowerCardDetailComponent } from './power-card-detail/power-card-detail.component';
@@ -10,9 +19,9 @@ import { MessageService } from './message.service';
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CardsComponent } from './cards/cards.component';
-import { AngularDraggableModule } from 'angular2-draggable';
-import {AngularFittextModule} from 'angular-fittext';
 import {ContextMenuModule } from'ngx-contextmenu';
+import { StatusEditorComponent, StatusEditorComponentDialog } from './status-editor/status-editor.component';
+
 
 
 @NgModule({
@@ -22,20 +31,37 @@ import {ContextMenuModule } from'ngx-contextmenu';
     MessagesComponent,
     DashboardComponent,
     CardsComponent,
+    StatusEditorComponent,
+    StatusEditorComponentDialog,
+    
+    
     
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     AngularDraggableModule,
-    AngularFittextModule,
     ContextMenuModule.forRoot(),
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    BrowserAnimationsModule,
+    MatSlideToggleModule,
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    MatInputModule,
+
+    
+    
   ],
   providers: [
     PowerService,
     MessageService,
+    MatDialog,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [StatusEditorComponent, StatusEditorComponentDialog],
 })
 export class AppModule { }

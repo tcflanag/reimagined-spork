@@ -24,6 +24,7 @@ export class PowerService {
 
     parseString(MOCK_XML, { attrkey: 'name' }, function (err, result) {
       //console.log(result);
+      //console.log(err);
       //console.log(result.D20Character.CharacterSheet[0].StatBlock[0]);
 
       result.D20Character.CharacterSheet[0].StatBlock[0].Stat.forEach(stat => {
@@ -69,6 +70,11 @@ export class PowerService {
 
 
       });
+      stats.hit_mod = new stat_detail();
+      stats.hit_mod.value = 2;
+      stats.regen = new stat_detail();
+      stats.regen.value = 4;
+      
       //console.log(stats)
 
       result.D20Character.CharacterSheet[0].LootTally[0].loot.forEach(loot_item => {

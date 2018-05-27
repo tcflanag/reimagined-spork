@@ -1,0 +1,80 @@
+
+
+
+<div (click)="openDialog('Reflex','ref')" class="floating_stat"><Strong>Reflex</Strong>: <div class="circle">{{stats.ref.value}}</div></div>
+<div (click)="openDialog('Fortitude','fort')" class="floating_stat"><Strong>Fortitude</Strong>: <div class="circle">{{stats.fort.value}}</div></div>
+<div (click)="openDialog('Will','will')" class="floating_stat"><Strong>Will</Strong>: <div class="circle">{{stats.will.value}}</div></div>
+<div (click)="openDialog('AC','ac')" class="floating_stat"><Strong>AC</Strong>: <div class="circle">{{stats.ac.value}}</div></div>
+<div class="floating_stat"><Strong>HP</Strong>  <div class="square">{{stats.hp.value}}/{{stats.hp.value}}</div></div>
+<div (click)="openDialog('To Hit Modifier','hit_mod')"class="floating_stat"><Strong>To Hit</Strong>  <div class="square">{{stats.hit_mod.value}}</div></div>
+<div (click)="openDialog('Regen','regen')" class="floating_stat"><Strong>Regen</Strong>  <div class="square">{{stats.regen.value}}</div></div>
+<div class="floating_stat"><Strong>Ongoing</Strong>  
+  <div class="square small_font">
+    5 fire 3 cold (save)<br/>
+    8 Thunder (1 turn))
+  </div>
+</div>
+<div class="floating_stat">
+  <div style="border: 1px solid">
+    <h1> Status Effects</h1><br/>
+    <h2> Save Ends</h2>
+    Stunned<br/>
+    Weakened
+  </div>
+</div>
+
+
+  <table class="table table-striped table-bordered">
+      <thead>
+          <tr>
+              <th>Code</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Action</th>
+          </tr>
+      </thead>
+      
+      <tbody>
+          <tr *ngFor="let field of fieldArray; let i = index">
+              <td>
+                  <mat-label>{{field.code}}</mat-label>
+              </td>
+              <td>
+                  <mat-label>{{field.name}}</mat-label>
+              </td>
+              <td>
+                  <input [(ngModel)]="field.price" class="form-control" type="text" name="{{field.price}}" />
+              </td>
+              <td>
+                  <button class="btn btn-default"  type="button" (click)="deleteFieldValue(i)">Delete</button>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <input class="form-control" type="text" id="newAttributeCode" [(ngModel)]="newAttribute.code" name="newAttributeCode" />
+                  <form class="example-form">
+                  <mat-form-field class="example-full-width">
+                      <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+                      <mat-autocomplete #auto="matAutocomplete">
+                        <mat-option *ngFor="let option of options" [value]="option">
+                          {{ option }}
+                        </mat-option>
+                      </mat-autocomplete>
+                    </mat-form-field>
+                  </form>
+              </td>
+              <td>
+                  <mat-slide-toggle class="example-margin">
+                      Slide me!
+                    </mat-slide-toggle>
+                  <!-- <input class="form-control" type="text" id="newAttributeName" [(ngModel)]="newAttribute.name" name="newAttributeName" /> -->
+              </td>
+              <td>
+                  <input class="form-control" type="text" id="newAttributePrice" [(ngModel)]="newAttribute.price" name="newAttributePrice" />
+              </td>
+              <td>
+                  <button class="btn btn-default" type="button" (click)="addFieldValue()">Add</button>
+              </td>
+          </tr>
+      </tbody>
+  </table>
