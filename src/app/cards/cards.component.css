@@ -6,8 +6,8 @@
 
 .card_table{
   height: 100%;
-  width:80%;
-
+  width:50%;
+  overflow: hidden;
   float: left;
 
 }
@@ -15,6 +15,6 @@
 .stats_area {
   float: right;
   overflow: hidden;
-  width: 18%;
+  width: 44%;
   border: 1px solid red
 }

@@ -26,6 +26,33 @@ export class StatusEditorComponent {
    ];
 
 
+   EffectTypes = [
+    {
+      name: 'Ongoing',
+      effects: [
+        { value: 'fire', viewValue: 'Fire' },
+        { value: 'ice', viewValue: 'Ice' },
+        { value: 'thunder', viewValue: 'Thunder' },
+        { value: 'poison', viewValue: 'Poison' },
+        { value: 'lightning', viewValue: 'Lightning' },
+        { value: 'other', viewValue: 'Other' },
+      ]
+    },
+    {
+      name: 'Status',
+      effects: [
+        { value: 'stun', viewValue: 'Stunned' },
+        {value: 'daze', viewValue: 'Dazed' },
+        { value: 'slow', viewValue: 'Slowed' },
+        { value: 'imobile', viewValue: 'Immobilized' },
+        { value: 'restran', viewValue: 'Restrained' },
+    ]
+    },
+   
+
+  ];
+
+
   addFieldValue() {
       this.fieldArray.push(this.newAttribute)
       this.newAttribute = {};

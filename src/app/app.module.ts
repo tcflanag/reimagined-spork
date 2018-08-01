@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms'; 
-import { MatDialogModule, MatDialog, MatFormFieldModule,MatInputModule,MatSlideToggle, MatSlideToggleModule,MatAutocompleteModule,
+import { MatDialogModule, MatDialog, MatFormFieldModule,MatInputModule,MatSlideToggle, MatSlideToggleModule,MatAutocompleteModule,MatSelectModule,
 } from '@angular/material';
 
 
@@ -50,7 +50,7 @@ import { StatusEditorComponent, StatusEditorComponentDialog } from './status-edi
     MatAutocompleteModule,
     MatFormFieldModule,
     MatInputModule,
-
+    MatSelectModule,
     
     
   ],
